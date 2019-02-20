@@ -1,0 +1,6 @@
+<h1> Show Department for Student</h1>
+<% @department.students.each do |student| %>
+	<h1> Show Student </h1>
+	<h3>Student Name:<%= student.name%></h3>
+	 <%= link_to 'Edit',edit_department_student_path(@department, student) %>
+<% end %>	

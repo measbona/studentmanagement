@@ -1,0 +1,29 @@
+<%= render 'navbar'%>
+
+<h1>All Student List </h1>
+<%= link_to("Add New Student", new_student_path, class: "btn btn-primary")%><%= flash[:notice]%>
+<%= link_to("Show All list department", new_student_path, class: "btn btn-primary")%><%= flash[:notice]%>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Gender</th>
+    <th>Address</th>
+    <th>Department</th>
+    <th>Setting</th>
+  </tr>
+  <%@students.each do |student| %>
+  	<tr>
+    	<td><%= student.name %></td>
+    	<td><%= student.gender %></td>
+    	<td><%= student.address %></td>
+    	<td><%= student.department.try :name %></td>
+    	<td>
+
+    		<%= link_to("edit",edit_student_path(student), class: "btn btn-primary")%>
+    		<%= link_to("Delete",student_path(student), method: :delete, data: {confirm: 'Are you sure to delete?'}, class: "btn btn-primary")%>
+    		<%= link_to("Details",student_path(student), class: "btn btn-primary")%>
+
+    	</td>  
+  	</tr>
+  <% end %>
+</table>

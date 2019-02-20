@@ -1,0 +1,4 @@
+<h1>Department for Student</h1>
+<% @departments.each do|department|%>
+<li><%= link_to(department.name, department_path(department))%></li>
+<% end %>

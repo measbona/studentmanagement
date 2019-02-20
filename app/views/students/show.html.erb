@@ -1,0 +1,7 @@
+<h1> Show Student </h1>
+<%= flash[:notice]%>
+<h3>Student Name:<%= @student.name%></h3>
+<h3>Gender:<%= @student.gender%></h3>
+<h3>Address:<%= @student.address %></h3>
+ <h3>Department at:<%= @student.department.try :name %></h3>
+ 	<%= link_to "Return to All Student List", root_path%>
