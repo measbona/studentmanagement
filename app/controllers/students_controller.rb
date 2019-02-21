@@ -33,11 +33,9 @@ class StudentsController < ApplicationController
 		else
 			render:new		
 		end
-
 	end
 
 	def destroy
-		
 		@student= Student.find(params[:id])
 		@student.destroy
 		redirect_to root_path
