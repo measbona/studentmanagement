@@ -7,7 +7,5 @@ Rails.application.routes.draw do
   # get "students/:id/edit" => "students#edit", as: "edit_student"
   # patch "students/:id" => "students#update"
   resources :students
-  resources :departments do
-  	resources :students
-  end
+  resources :departments
 end
