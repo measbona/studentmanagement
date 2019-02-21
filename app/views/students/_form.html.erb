@@ -1,20 +1,48 @@
 <%= form_for(@student) do |f|%>
-<p>
-    <%= f.label :name %><br/>
-    <%= f.text_field :name, autofocus: true %>
-  </p>
- <p>
-    <%= f.label :gender %><br/>
-    <%= f.text_area :gender, autofocus: true %>
-  </p>
-  <p>
-    <%= f.label :address %><br/>
-    <%= f.text_field :address, autofocus: true %>
-  </p>
-  <p>
-    <%= f.label :department_id %><br/> 
-    <%= select("student", "department_id", Department.all.map{|department| [department.name, department.id]}) %>
-  </p>
-  <%= f.submit %>
-  <%=link_to"Cancel", root_path%>
-  <% end %>
+ <div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+    <div class= "row">
+      <div class="col-md-3">
+        <%= f.label :name , class: "control-label" %>
+      </div>
+      <div class="col-md-6">
+        <%= f.text_field :name, autofocus: true , class: "form-control" %>
+      </div>
+    </div>
+    </br>
+    <div class= "row">
+      <div class="col-md-3">
+       <%= f.label :gender , class: "control-label" %>
+      </div>
+      <div class="col-md-6">
+        <%= f.select(:gender, options_for_select(["Female", "Male"]), {}, { include_blank: true, class: 'form-control' }) %>
+      </div>
+    </div>
+    </br>
+    <div class="row">
+      <div class="col-md-3">
+        <%= f.label :address, class: "control-label" %>
+      </div>
+      <div class="col-md-6">     
+        <%= f.text_field :address, autofocus: true , class: "form-control" %>
+      </div>
+    </div>
+    </br>
+    <div class="row">
+      <div class="col-md-3">
+        <%= f.label :department_id, class: "control-label" %><br/> 
+      </div>
+      <div class="col-md-6">  
+        <%= f.select(:department_id, options_for_select(Department.all.map{|department| [department.name, department.id]}), {}, {include_blank: true, class: 'form-control' }) %>
+      </div>
+    </div>
+    </br>  
+    <div class="row">
+      <%= f.submit "Save" ,class: "btn btn-success" %> |   
+      <%=link_to "Cancel" , root_path%>
+    </div>
+  </div>
+  <div class="col-md-2"></div>
+</div>
+<% end %>

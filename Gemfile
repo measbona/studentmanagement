@@ -7,6 +7,7 @@ ruby '2.5.3'
 gem 'rails', '~> 5.2.2'
 gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
+gem 'simple_form'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
