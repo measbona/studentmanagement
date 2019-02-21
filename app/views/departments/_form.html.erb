@@ -1,12 +1,16 @@
 <%= form_for(@department) do |d|%>
-<p>
-    <%= d.label :name %><br/>
-    <%= d.text_field :name, autofocus: true %>
-  </p>
-  <!-- <p>
-    <%= d.label :department_id %><br/> 
-    <%= select("student", "department_id", Department.all.map{|department| [department.name, department.id]}) %>
-  </p> -->
-  <%= d.submit %>
-  <%=link_to"Cancel", root_path%>
-  <% end %>
+ <div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+    <div class= "row">
+      <div class="col-md-3">
+        <%= d.label :name , class: "control-label" %>
+      </div>
+      <div class="col-md-6">
+        <%= d.text_field :name, autofocus: true , class: "form-control" %>
+      </div>
+    </div>
+    </br>
+    <%= d.submit"Save",class: "btn btn-success"  %> | 
+  <%=link_to"Cancel", root_path%>    
+<% end %>
